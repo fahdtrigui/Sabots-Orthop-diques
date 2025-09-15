@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabots Orthopédiques Premium - Confort Révolutionnaire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section with Modern Gradient */
+        .hero {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 25%, #334155 50%, #475569 75%, #64748B 100%);
+            position: relative;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.2) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; transform: rotate(0deg); }
+            50% { opacity: 0.8; transform: rotate(1deg) scale(1.02); }
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .hero-text p {
+            font-size: 1.4rem;
+            margin-bottom: 32px;
+            opacity: 0.92;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .price-old {
+            font-size: 2rem;
+            text-decoration: line-through;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .price-new {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 20px 48px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 16px;
+            box-shadow: 
+                0 10px 30px rgba(59, 130, 246, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 
+                0 20px 50px rgba(59, 130, 246, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 
+                0 25px 80px rgba(0,0,0,0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1;
+            font-size: 1.3rem;
+            color: #64748b;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .product-image:hover {
+            transform: scale(1.08) rotateY(12deg);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+            position: relative;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+        }
+
+        .features .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 3.2rem;
+            margin-bottom: 80px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 48px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 
+                0 20px 60px rgba(0,0,0,0.08),
+                0 0 0 1px rgba(255, 255, 255, 0.5);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 
+                0 30px 80px rgba(0,0,0,0.12),
+                0 0 0 1px rgba(59, 130, 246, 0.2);
+        }
+
+        .feature-icon {
+            width: 96px;
+            height: 96px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 2.4rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1e293b;
+        }
+
+        .feature-card p {
+            font-size: 1.1rem;
+            color: #64748b;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
+        }
+
+        .testimonials .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 3.2rem;
+            margin-bottom: 80px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 48px;
+        }
+
+        .testimonial {
+            background: rgba(255,255,255,0.08);
+            padding: 48px;
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .testimonial:hover::before {
+            opacity: 1;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+            font-style: italic;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            opacity: 0.9;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.2) 0%, transparent 70%),
+                linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.1) 50%, transparent 70%);
+        }
+
+        .final-cta .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .final-cta p {
+            font-size: 1.4rem;
+            margin-bottom: 48px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Form Styles */
+        .converty-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 
+                0 25px 80px rgba(0,0,0,0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            max-width: 520px;
+            margin: 48px auto 0;
+            backdrop-filter: blur(20px);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 18px 24px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #e2e8f0;
+            font-size: 1rem;
+        }
+
+        .trust-signals {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .trust-signal {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255,255,255,0.9);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .guarantee {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+            padding: 32px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .guarantee h3 {
+            color: #10b981;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .guarantee p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 60px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            
+            .features-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .converty-form {
+                margin: 40px 20px 0;
+                padding: 32px;
+            }
+
+            .trust-signals {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Sabots Orthopédiques Premium</h1>
+                    <p>Découvrez le confort ultime avec nos sabots orthopédiques révolutionnaires. Parfaits pour les professionnels de la santé, les travailleurs debout et tous ceux qui cherchent le bien-être de leurs pieds.</p>
+                    
+                    <div class="price">
+                        <span class="price-old">89dt</span>
+                        <span class="price-new">59dt</span>
+                    </div>
+
+                    <div class="guarantee">
+                        <h3>✓ Garantie Satisfait ou Remboursé 30 Jours</h3>
+                        <p>Pas satisfait ? Récupérez votre argent intégralement, sans poser de questions.</p>
+                    </div>
+
+                    <button class="cta-button" onclick="scrollToOrder()">
+                        Commander Maintenant - Offre Limitée !
+                    </button>
+
+                    <div class="trust-signals">
+                        <div class="trust-signal">
+                            <span>🚚</span>
+                            <span>Livraison Gratuite</span>
+                        </div>
+                        <div class="trust-signal">
+                            <span>⭐</span>
+                            <span>Note 4.9/5</span>
+                        </div>
+                        <div class="trust-signal">
+                            <span>🔒</span>
+                            <span>Paiement Sécurisé</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="product-image">
+                        <img src="BASIC_CZARNY_PARA.jpg" alt="Sabot Orthopédique Premium" style="width:100%; height:auto; border-radius:20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Pourquoi Choisir Nos Sabots Orthopédiques ?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🦶</div>
+                    <h3>Support Orthopédique Avancé</h3>
+                    <p>Semelle ergonomique avec soutien plantaire intégré. Réduit la fatigue et améliore la posture pour un confort toute la journée.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3>Matériaux Anti-bactériens</h3>
+                    <p>Fabriqués avec des matériaux respirants et antibactériens. Parfaits pour les environnements médicaux et professionnels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Résistance et Durabilité</h3>
+                    <p>Construction robuste qui résiste aux lavages fréquents. Antidérapants et conformes aux normes de sécurité professionnelles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Ce Que Disent Nos Clients</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-text">"Les meilleurs sabots que j'ai jamais portés ! En tant qu'infirmière, je passe 12h debout et ces sabots ont changé ma vie. Aucune douleur aux pieds."</div>
+                    <div class="testimonial-author">- Kenza Lahiani, Infirmière</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">"Parfaits pour la cuisine ! Antidérapants, faciles à nettoyer et très confortables même après de longues journées."</div>
+                    <div class="testimonial-author">- Moncef Trigui, Chef Cuisinier</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">"Excellent support plantaire. Mes problèmes de dos ont diminué depuis que je les porte. Je les recommande à tous mes collègues."</div>
+                    <div class="testimonial-author">- Dr. Habib Derbel, Médecin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="order">
+        <div class="container">
+            <h2>Prêt à Transformer Votre Confort ?</h2>
+            <p>Rejoignez des milliers de clients satisfaits. Offre limitée - Économisez 30dt aujourd'hui !</p>
+            
+            <!-- Converty Integration Form -->
+            <div class="converty-form">
+                <h3 style="margin-bottom: 32px; color: #e2e8f0; font-size: 1.5rem; font-weight: 700;">Formulaire de Commande Sécurisé</h3>
+                
+                <form id="converty-order-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="fullname">Nom Complet *</label>
+                        <input type="text" id="fullname" name="fullname" required placeholder="Votre nom complet">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Adresse Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Numéro de Téléphone *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+216 XX XXX XXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="size">Pointure</label>
+                        <select id="size" name="size" required>
+                            <option value="">Sélectionnez votre pointure</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Quantité</label>
+                        <select id="quantity" name="quantity">
+                            <option value="1">1 Paire - 59dt</option>
+                            <option value="2">2 Paires - 108dt (Économisez 10dt)</option>
+                            <option value="3">3 Paires - 147dt (Économisez 30dt)</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="cta-button" style="width: 100%; margin-top: 32px;">
+                        Finaliser la Commande - 59dt
+                    </button>
+                </form>
+                
+                <!-- Converty Integration Note -->
+                <div style="margin-top: 32px; padding: 20px; background: rgba(59, 130, 246, 0.1); border-radius: 16px; color: #cbd5e1; font-size: 0.95rem; border: 1px solid rgba(59, 130, 246, 0.2);">
+                    <strong>📝 Intégration Converty :</strong><br>
+                    Remplacez le formulaire ci-dessus par votre pixel de suivi Converty et le code du formulaire de commande. 
+                    Mettez à jour l'URL d'action du formulaire pour qu'elle pointe vers votre endpoint Converty.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function scrollToOrder() {
+            document.getElementById('order').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Update price based on quantity selection
+        document.getElementById('quantity').addEventListener('change', function() {
+            const submitBtn = document.querySelector('button[type="submit"]');
+            const quantity = this.value;
+            let price, savings = '';
+            
+            switch(quantity) {
+                case '1':
+                    price = '59dt';
+                    break;
+                case '2':
+                    price = '108dt';
+                    savings = ' (Économisez 10dt)';
+                    break;
+                case '3':
+                    price = '147dt';
+                    savings = ' (Économisez 30dt)';
+                    break;
+            }
+            
+            submitBtn.textContent = `Finaliser la Commande - ${price}${savings}`;
+        });
+
+        // Form submission (replace with Converty integration)
+        document.getElementById('converty-order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Replace this with actual Converty tracking code
+            alert('Commande envoyée ! Remplacez ceci par l\'intégration Converty.');
+        });
+
+        // Add smooth scrolling and enhanced interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe feature cards and testimonials
+            document.querySelectorAll('.feature-card, .testimonial').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
